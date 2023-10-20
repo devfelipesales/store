@@ -1,9 +1,6 @@
 module.exports = {
-  // plugins: {
-
-  //   tailwindcss: {},
-  //   autoprefixer: {},
-  // },
-
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 };
