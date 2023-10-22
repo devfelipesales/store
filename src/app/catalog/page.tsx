@@ -8,7 +8,7 @@ const CatalogPage = async () => {
   return (
     <div className="container">
       <Badge
-        className="gap-2 border-2 border-primary px-4 py-2 text-base font-semibold uppercase"
+        className="gap-2 border-2 border-primary px-3 py-2 text-sm font-semibold uppercase"
         variant="outline"
       >
         <ShapesIcon size={16} />
