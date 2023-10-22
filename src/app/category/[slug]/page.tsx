@@ -20,9 +20,9 @@ const CategoryProducts = async ({ params }: any) => {
   }
 
   return (
-    <div className="container flex flex-col gap-8 place-self-start">
+    <div className="container flex flex-col gap-8">
       <Badge
-        className="gap-2 border-2 border-primary px-4 py-2 text-base font-semibold uppercase"
+        className="w-fit gap-2 border-2 border-primary px-4 py-2 text-base font-semibold uppercase"
         variant="outline"
       >
         {CATEGORY_ICON[params.slug as keyof typeof CATEGORY_ICON]}
