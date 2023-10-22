@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
 import { AuthProvider } from "@/providers/auth";
+import Footer from "@/components/ui/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <AuthProvider>
-          <Header />
-          {children}
-        </AuthProvider>
+        {/* Essas duas divs foram criadas como para deixar o footer sempre em baixo quando não tiver conteúdo na página principal */}
+        <div className="flex h-full flex-col">
+          <AuthProvider>
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </AuthProvider>
+        </div>
       </body>
     </html>
   );
