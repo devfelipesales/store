@@ -142,10 +142,6 @@ const Header = () => {
             <Cart />
           </SheetContent>
         </Sheet>
-
-        <Button size="icon" variant="outline">
-          <ShoppingCartIcon />
-        </Button>
       </Card>
     </header>
   );
