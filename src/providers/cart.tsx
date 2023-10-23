@@ -36,23 +36,16 @@ export const CartContext = createContext<ICartContext>({
 });
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
-  const isBrowser = () => typeof window !== "undefined";
-
-  const [products, setProducts] = useState<CartProduct[]>(
-    isBrowser()
-      ? JSON.parse(
-          window.localStorage.getItem("@fsw-store/cart-products") || "[]",
-        )
-      : [],
-  );
+  const [products, setProducts] = useState<CartProduct[]>([]);
 
   useEffect(() => {
-    if (isBrowser()) {
-      window.localStorage.setItem(
-        "@fsw-store/cart-products",
-        JSON.stringify(products),
-      );
-    }
+    setProducts(
+      JSON.parse(localStorage.getItem("@fsw-store/cart-products") || "[]"),
+    );
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("@fsw-store/cart-products", JSON.stringify(products));
   }, [products]);
 
   // Total sem descontos
