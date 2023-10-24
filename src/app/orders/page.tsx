@@ -5,6 +5,10 @@ import { PackageSearchIcon } from "lucide-react";
 import { getServerSession } from "next-auth";
 import OrderItem from "./components/order-item";
 
+// Utilizado em razão do getServerSession(authOption); Erro ao gerar a página estática no deploy;
+// Solução 2 - Transformar essa parte client component e utilizar o useSession
+export const dynamic = "force-dynamic";
+
 async function OrderPage() {
   const user = getServerSession(authOption);
 
