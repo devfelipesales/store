@@ -33,8 +33,6 @@ export const POST = async (request: Request) => {
     // itens do pedido
     const lineItems = sessionWithLineItems.line_items;
 
-    console.log(lineItems);
-
     // ATUALIZAR PEDIDO
     await prismaClient.order.update({
       where: {
